@@ -1,0 +1,32 @@
+#Sistema de compra de maquillaje
+lista = []
+productos = ("base", "labial", "mascara de pestañas", "rubor", "sombra de ojos")
+
+while True:
+    #Usamos .lower() aquí para que "Base", "BASE" o "base" sean lo mismo.
+    producto = input("Ingrese el prodcuro que desea comprar (o 'fin' para terminar): ")
+    if producto == 'fin':
+        break
+    if producto in productos:
+        lista.append(producto)
+    else:
+        print("Producto no válido. Por favor, seleccione un producto de la lista.")
+        print("Producto disponible:", productos)
+        print("Lista de compras:", lista)
+        print("Gracias por su compra.")
+        print("¡Hasta luego, vuelva pronto!")
+
+#Diccionario de precios de productos:
+precios = {
+    "base": 2.75,
+    "labial": 1.50,
+    "mascara de pestañas": 3.25,
+    "rubor": 2.00,
+    "sombra de ojos": 5.00
+}
+Total = 0
+
+for producto in lista:
+    Total += precios[producto]
+    print(f"producto: {producto} - precio: {precios[producto]} - Total: {Total:.2f}")
+    
